@@ -4,6 +4,7 @@ class LRU_Cache(object):
         # Initialize class variables
         self.items = []
         self.capacity = capacity
+        self.lenght = 0
         
 
     def get(self, key):
@@ -16,8 +17,10 @@ class LRU_Cache(object):
 
     def set(self, key, value):
         # Set the value if the key is not present in the cache. If the cache is at capacity remove the oldest item. 
+        if self.lenght >= self.capacity: 
+            self.items.pop(0)
         self.items.append((key, value))
-        
+        self.lenght += 1
 
 our_cache = LRU_Cache(5)
 
