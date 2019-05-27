@@ -1,3 +1,4 @@
+#import os - should I import it here?
 def find_files(suffix, path):
     """
     Find all files beneath path with file name suffix.
@@ -14,4 +15,13 @@ def find_files(suffix, path):
     Returns:
        a list of paths
     """
-    return None
+    import os
+
+    list_of_paths = []
+    for item in os.listdir(path):
+      if item.endswith(suffix):
+        list_of_paths.append(item)
+    # return None
+    print(list_of_paths)
+
+find_files('c', 'testdir')
