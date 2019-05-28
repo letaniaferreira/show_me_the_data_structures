@@ -1,5 +1,22 @@
 import sys
 
+def find_frequency(a_string):
+
+    freq_dict = {}
+    freq_tuple = ()
+    for letter in a_string:
+        if letter not in freq_dict:
+            freq_dict[letter] = 1
+        else:
+            freq_dict[letter] += 1
+
+    for key, value in freq_dict.items():
+        freq_tuple = (freq_tuple) + (value, key)
+
+    return freq_tuple
+
+result = find_frequency('good morning')
+print(result)
 def huffman_encoding(data):
     pass
 
