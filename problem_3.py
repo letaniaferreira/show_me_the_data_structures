@@ -3,7 +3,7 @@ import sys
 def find_frequency(a_string):
 
     freq_dict = {}
-    freq_tuple = ()
+    freq_list = []
     for letter in a_string:
         if letter not in freq_dict:
             freq_dict[letter] = 1
@@ -11,9 +11,9 @@ def find_frequency(a_string):
             freq_dict[letter] += 1
 
     for key, value in freq_dict.items():
-        freq_tuple = (freq_tuple) + (value, key)
+        freq_list.append((value, key))
 
-    return freq_tuple
+    return freq_list
 
 result = find_frequency('good morning')
 print(result)
