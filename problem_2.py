@@ -18,11 +18,16 @@ def find_files(suffix, path):
 
     list_of_paths = []
     for item in os.listdir(path):
-      print(os.path.join(path, item))
+      # print(os.path.join(path, item))
       if os.path.isfile(os.path.join(path, item)): 
         if item.endswith(suffix):
-          list_of_paths.append(item)
-    # return None
-    print(list_of_paths)
+          list_of_paths.append(os.path.join(path, item))
+        
+      else:
+        list_of_paths.extend(find_files(suffix, os.path.join(path, item)))
+    
+    return list_of_paths
+    
 
-find_files('.c', 'testdir')
+result = find_files('.c', 'testdir')
+print(result)
