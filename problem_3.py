@@ -13,7 +13,7 @@ def find_frequency(a_string):
     for key, value in freq_dict.items():
         freq_list.append((value, key))
 
-    return freq_list
+    return sorted(freq_list)
 
 result = find_frequency('good morning')
 print(result)
