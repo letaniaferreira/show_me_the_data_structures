@@ -15,10 +15,15 @@ def find_frequency(a_string):
 
     return sorted(freq_list)
 
-result = find_frequency('good morning')
-print(result)
 def huffman_encoding(data):
-    pass
+    freq = find_frequency(data)
+    #while list lasts
+    #add slow lowest numbers
+    
+
+
+result = huffman_encoding('good morning')
+
 
 def huffman_decoding(data,tree):
     pass
