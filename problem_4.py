@@ -19,6 +19,16 @@ class Group(object):
     def get_name(self):
         return self.name
 
+def is_user_in_group(user, group):
+    """
+    Return True if user is in the group, False otherwise.
+
+    Args:
+      user(str): user name/id
+      group(class:Group): group to check user membership against
+    """
+    return None
+
 
 parent = Group("parent")
 child = Group("child")
